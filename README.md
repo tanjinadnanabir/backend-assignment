@@ -4,7 +4,7 @@
  Name: Category App  
  Version: 1.0.0
 
-# ![Node/Express/Mongoose Category App]
+# Node/Express/Mongoose Category App
 
 # Getting started
 
@@ -15,23 +15,20 @@ To get the Node server running locally:
 - Install MongoDB Community Edition ([instructions](https://docs.mongodb.com/manual/installation/#tutorials)) and run it by executing `mongod`
 - `npm run dev` to start the local server
 
-Alternately, to quickly try out this repo in the cloud, you can [![Remix on Glitch](https://cdn.glitch.com/2703baf2-b643-4da7-ab91-7ee2a2d00b5b%2Fremix-button.svg)](https://glitch.com/edit/#!/remix/realworld)
-
 # Code Overview
 
 ## Dependencies
 
 - [expressjs](https://github.com/expressjs/express) - The server for handling and routing HTTP requests
-- [express-jwt](https://github.com/auth0/express-jwt) - Middleware for validating JWTs for authentication
-- [jsonwebtoken](https://github.com/auth0/node-jsonwebtoken) - For generating JWTs used by authentication
-- [mongoose](https://github.com/Automattic/mongoose) - For modeling and mapping MongoDB data to javascript 
-- [mongoose-unique-validator](https://github.com/blakehaswell/mongoose-unique-validator) - For handling unique validation errors in Mongoose. Mongoose only handles validation at the document level, so a unique index across a collection will throw an exception at the driver level. The `mongoose-unique-validator` plugin helps us by formatting the error like a normal mongoose `ValidationError`.
-- [passport](https://github.com/jaredhanson/passport) - For handling user authentication
-- [slug](https://github.com/dodo/node-slug) - For encoding titles into a URL-friendly format
+- [mongoose](https://github.com/Automattic/mongoose) - For modeling and mapping MongoDB data to javascript
+- [cors](https://github.com/expressjs/express) - For providing a Connect/Express middleware that can be used to enable CORS with various options.
+- [nodemon](https://github.com/expressjs/express) - Automatically restarts the node application when file changes in the directory are detected
+- [redis](https://github.com/expressjs/express) - A modern, high performance Redis client for Node.js
+- [mongodb](https://github.com/expressjs/express) - The official MongoDB driver for Node.js
 
 ## Application Structure
 
-- `app.js` - The entry point to our application. This file defines our express server and connects it to MongoDB using mongoose. It also requires the routes and models we'll be using in the application.
-- `config/` - This folder contains configuration for passport as well as a central location for configuration/environment variables.
+- `server.js` - The entry point to our application. It requires the routes and models we'll be using in the application.
+- `config/` - This folder contains configuration of mongoose database and redis.
 - `routes/` - This folder contains the route definitions for our API.
 - `models/` - This folder contains the schema definitions for our Mongoose models.
