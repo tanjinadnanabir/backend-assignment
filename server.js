@@ -27,7 +27,7 @@ app.use((err, req, res, next) => {
         return res.status(400).send(
             {
                 "status": 400,
-                'message': "error parsing data, request is not in a JSON format",
+                'message': "error parsing data, request is not in JSON format",
                 "success": true
             })
     } else {
@@ -80,5 +80,5 @@ app.delete('/*', (req, res) => {
 
 // listen for requests
 app.listen(3000, () => {
-    console.log("Server is listening on port 3000");
+    console.log("Server is running on port 3000");
 });
