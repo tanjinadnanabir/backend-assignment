@@ -38,7 +38,7 @@ let Category = mongoose.model('Category', {
         }
     }, status: {
         type: Number,  
-        default: 1 // 1 = active, 2 = inactive, 3 = deleted
+        default: 1 // 1 = active or 2 = inactive
     }, createdAt: {
         type: Date,
         default: Date.now
