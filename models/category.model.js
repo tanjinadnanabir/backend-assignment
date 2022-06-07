@@ -13,7 +13,7 @@ let Category = mongoose.model('Category', {
             return new Promise(async (resolve, reject) => {
                 try {
                     const result = await Category.findOne({ title: value, status: {$ne : 0} })
-                    if (result && result.status != 0) reject(new Error('Category name already exists.'));
+                    if (result && result.status != 0) reject(new Error('category name already exists...'));
                     else resolve(true)
                 } catch (error) {
                     reject(Error(error));
@@ -29,7 +29,7 @@ let Category = mongoose.model('Category', {
                 if(value == undefined) resolve(true);
                 try {
                     const result = await Category.findOne({ _id: value })
-                    if (!result) reject(new Error('Unknown parents category.'));
+                    if (!result) reject(new Error('unknown parents category...'));
                     else resolve(true)
                 } catch (error) {
                     reject(Error(error));
