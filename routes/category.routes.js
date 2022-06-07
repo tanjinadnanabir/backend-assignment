@@ -10,10 +10,10 @@ const { client } = require('../config/redisdb.config');
 const { ObjectID } = require('mongodb');
 
 // show list of categories
-router.get('/list', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         let categoryList = await Category.find({ status: 1, parentsCategoryID: null });
-        categoryList = await getChildCategory(categoryList); // get child category
+        categoryList = await getChildCategory(categoryList);
 
         return res.status(200).send({
             "success": true,
