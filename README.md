@@ -34,3 +34,12 @@ To get the Node server running locally:
 - `config/` - This folder contains configuration of mongoose database and redis.
 - `routes/` - This folder contains the route definitions for our API.
 - `models/` - This folder contains the schema definitions for our Mongoose models.
+
+## Features
+
+1. A database model for categories which can have nesting up to 4 levels of child categories. Each category can have only one parent category. All category names must be unique. 
+2. A simple CRUD operation for these categories and expose that via a GraphQL or REST API.
+3. When a user searches for a category the parent category (if there is any) must be provided in a single response.
+4. If the user deactivates a category then all corresponding child categories must be deactivated automatically.
+5. Nesting of unlimited levels of child categories.
+6. Using Redis to cache data to quickly serve further queries to the API. Clear the cache if the actual data is modified.
